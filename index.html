@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Project - Ingeniería Estructural</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>FREE PROJECT</h1>
+    <p>Especialistas en diseño estructural y soluciones para proyectos de ingeniería</p>
+  </header>
+
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#colaboradores">Especialistas</a>
+    <a href="#trabajos-recientes">Trabajos Recientes</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="quienes-somos">
+    <h2>¿Quiénes Somos?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>👷‍♂️ Ingeniero Civil Senior</h3>
+        <p>30 años de experiencia en cálculo estructural.</p>
+      </div>
+      <div class="card">
+        <h3>📐 Dibujante Proyectista</h3>
+        <p>5 años de experiencia en diseño estructural.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Alianzas Profesionales</h3>
+        <p>Red de expertos en especialidades complementarias.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <p>✅ Cálculo estructural para todo tipo de obras.</p>
+      </div>
+      <div class="card">
+        <p>📄 Planos de ingeniería de detalle y modelos 3D.</p>
+      </div>
+      <div class="card">
+        <p>🧾 Permisos y regularización ante entidades municipales.</p>
+      </div>
+      <div class="card">
+        <p>🏗️ Inspecciones técnicas y dirección de obras.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes">
+    <h2>Nuestros Clientes</h2>
+    <div class="card">
+      <ul>
+        <li>Sociedad Constructora Pereda Foweraker</li>
+        <li>Inmobiliaria La Portada del Sol Ltda.</li>
+        <li>RVC Ingeniería y Construcción Ltda.</li>
+        <li>Municipalidades y empresas privadas</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="colaboradores">
+    <h2>Especialistas que Colaboran con Nosotros</h2>
+    <div class="card">
+      <ul>
+        <li>👨‍🔧 Ingeniero Sanitario</li>
+        <li>⚡ Ingeniero Eléctrico</li>
+        <li>🏗️ Ingeniero Constructor</li>
+        <li>🏛️ Arquitecto</li>
+        <li>🗺️ Topógrafo</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 🔍 TRABAJOS RECIENTES -->
+  <section id="trabajos-recientes">
+    <h2>Trabajos Recientes</h2>
+    <div class="galeria">
+      <div class="imagen-item">
+        <img src="img/521255075_1424634252120252_3095176558167811743_n.jpg" alt="Proyecto 1">
+        <p>Proyecto 1: Ampliación de galpón industrial</p>
+      </div>
+      <div class="imagen-item">
+        <img src="img/522960324_1268819061345041_9090708172432928995_n.jpg" alt="Proyecto 2">
+        <p>Proyecto 2: Diseño estructural edificio habitacional</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 🌍 CONTACTO -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>📍 Avenida Providencia 701, Ofic. 1</p>
+    <p>📞 <a href="tel:+56989514607">+56 9 8951 4607</a></p>
+    <p>📧 <a href="mailto:contacto@freeproject.cl">contacto@freeproject.cl</a></p>
+    <iframe src="https://maps.google.com/maps?q=-33.4259529,-70.6373244&z=15&output=embed" height="250"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Free Project. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- 💡 MODAL -->
+  <div id="modal" class="modal">
+    <span class="modal-cerrar">&times;</span>
+    <img class="modal-contenido" id="modal-img">
+    <p id="modal-descripcion"></p>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalDesc = document.getElementById("modal-descripcion");
+
+    document.querySelectorAll(".imagen-item img").forEach((img) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        modalDesc.textContent = img.nextElementSibling.textContent;
+      });
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.classList.contains("modal-cerrar")) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+
+</html>
